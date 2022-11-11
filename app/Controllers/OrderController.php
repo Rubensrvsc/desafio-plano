@@ -9,7 +9,12 @@ class OrderController extends BaseController
 {
     public function index()
     {
-        
+        $order = new OrderModel();
+        $listOrders = $order->findAll();
+
+        return view('index',[
+            'listOrders' => $listOrders
+        ]);
     }
 
     public function create_order(){
@@ -19,16 +24,11 @@ class OrderController extends BaseController
             'description' => $this->request->getVar('description')
         );
         $order = new OrderModel();
-        // $order->insert($dataOrder);
-        dd($order->findAll());
 
-        return view('form_order');
+        return view('index');
     }
 
     public function get_order_form(){
-        $order = new OrderModel();
-        // $order->insert($dataOrder);
-        dd($order->findAll());
         return view('form_order');
     }
 }
