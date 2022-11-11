@@ -1,7 +1,7 @@
 .h2{
     position: absolute;
-    left: 30%;
-    top: 30px;
+    left: 40%;
+    top: 90px;
 }
 
 ::placeholder{
@@ -19,7 +19,7 @@ table{
     min-width: 1000px;
     border-collapse: collapse;
     left: 200px;
-    top: 120px;
+    top: 150px;
 }
 
 thead th{
