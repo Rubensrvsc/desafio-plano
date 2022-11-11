@@ -58,6 +58,6 @@ class OrderController extends BaseController
     public function delete($id = null){
         $orders = new OrderModel();
         $orders->delete($id);
-        return redirect()->to(base_url('/'));
+        return redirect()->to(base_url('/'))->with('status', 'Order deletada com sucesso');
     }
 }
