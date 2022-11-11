@@ -31,4 +31,12 @@ class OrderController extends BaseController
     public function get_order_form(){
         return view('form_order');
     }
+
+    public function edit($id = null){
+        $orders = new OrderModel();
+        $dataOrder = $orders->find($id);
+        return view('edit_order',[
+            'dataOrder' => $dataOrder
+        ]);
+    }
 }

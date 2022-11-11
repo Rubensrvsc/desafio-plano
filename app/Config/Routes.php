@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'OrderController::index');
 $routes->get('/order', 'OrderController::get_order_form');
 $routes->post('/order', 'OrderController::create_order');
+$routes->get('/order/edit/(:num)', 'OrderController::edit/$1');
 
 /*
  * --------------------------------------------------------------------
