@@ -24,8 +24,10 @@ class OrderController extends BaseController
             'description' => $this->request->getVar('description')
         );
         $order = new OrderModel();
+        $order->insert($dataOrder);
+        $listOrders = $order->findAll();
 
-        return view('index');
+        return redirect()->to(base_url('/'))->with('status', 'Order criada com sucesso');
     }
 
     public function get_order_form(){
