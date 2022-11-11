@@ -7,6 +7,7 @@ use App\Models\OrderModel;
 
 class OrderController extends BaseController
 {
+
     public function index()
     {
         $order = new OrderModel();
@@ -59,5 +60,13 @@ class OrderController extends BaseController
         $orders = new OrderModel();
         $orders->delete($id);
         return redirect()->to(base_url('/'))->with('status', 'Order deletada com sucesso');
+    }
+
+    public function details($id = null){
+        $orders = new OrderModel();
+        $order = $orders->find($id);
+        return view('details',[
+            'order' => $order
+        ]);
     }
 }

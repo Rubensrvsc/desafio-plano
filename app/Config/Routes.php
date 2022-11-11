@@ -41,6 +41,7 @@ $routes->post('/order', 'OrderController::create_order');
 $routes->get('/order/edit/(:num)', 'OrderController::edit/$1');
 $routes->put('/order/update/(:num)', 'OrderController::update/$1');
 $routes->get('/order/delete/(:num)', 'OrderController::delete/$1');
+$routes->get('/order/details/(:num)', 'OrderController::details/$1');
 
 /*
  * --------------------------------------------------------------------

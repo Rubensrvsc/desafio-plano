@@ -50,6 +50,10 @@
               <a href="<?php echo base_url('order/edit/'.$order['id']) ?>" class="fa-solid fa-pen-to-square"></a>
             </button>
             <button>
+              <a 
+              href="<?php echo base_url('order/details/'.$order['id']) ?>" class="fa-solid fa-circle-info"></a>
+            </button>
+            <button>
               <a  onclick="return confirm('Deseja deletar essa ordem')" 
               href="<?php echo base_url('order/delete/'.$order['id']) ?>" class="fa-solid fa-trash"></a>
             </button>
