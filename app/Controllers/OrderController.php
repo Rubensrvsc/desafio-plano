@@ -8,10 +8,15 @@ use App\Models\OrderModel;
 class OrderController extends BaseController
 {
 
+    private $orderClass;
+
+    public function __construct(){
+        $this->orderClass = new OrderModel();
+    }
+
     public function index()
     {
-        $order = new OrderModel();
-        $listOrders = $order->findAll();
+        $listOrders = $this->orderClass->findAll();
 
         return view('index',[
             'listOrders' => $listOrders
@@ -24,11 +29,10 @@ class OrderController extends BaseController
             'cnpj' => $this->request->getVar('cnpj'),
             'description' => $this->request->getVar('description')
         );
-        $order = new OrderModel();
-        $order->insert($dataOrder);
-        $listOrders = $order->findAll();
+        $this->orderClass->insert($dataOrder);
+        $listOrders = $this->orderClass->findAll();
 
-        return redirect()->to(base_url('/'))->with('status', 'Order criada com sucesso');
+        return redirect()->to(base_url('/'))->with('status', 'Ordem criada com sucesso');
     }
 
     public function get_order_form(){
@@ -36,8 +40,7 @@ class OrderController extends BaseController
     }
 
     public function edit($id = null){
-        $orders = new OrderModel();
-        $dataOrder = $orders->find($id);
+        $dataOrder = $this->orderClass->find($id);
         return view('edit_order',[
             'dataOrder' => $dataOrder
         ]);
@@ -49,22 +52,17 @@ class OrderController extends BaseController
             'cnpj' => $this->request->getVar('cnpj'),
             'description' => $this->request->getVar('description')
         );
-
-        $order = new OrderModel();
-
-        $order->update($id, $dataOrder);
-        return redirect()->to(base_url('/'))->with('status', 'Order editada com sucesso');
+        $this->orderClass->update($id, $dataOrder);
+        return redirect()->to(base_url('/'))->with('status', 'Ordem editada com sucesso');
     }
 
     public function delete($id = null){
-        $orders = new OrderModel();
-        $orders->delete($id);
-        return redirect()->to(base_url('/'))->with('status', 'Order deletada com sucesso');
+        $this->orderClass->delete($id);
+        return redirect()->to(base_url('/'))->with('status', 'Ordem deletada com sucesso');
     }
 
     public function details($id = null){
-        $orders = new OrderModel();
-        $order = $orders->find($id);
+        $order = $this->orderClass->find($id);
         return view('details',[
             'order' => $order
         ]);
