@@ -39,4 +39,17 @@ class OrderController extends BaseController
             'dataOrder' => $dataOrder
         ]);
     }
+
+    public function update($id = null){
+        $dataOrder = array(
+            'value' => $this->request->getVar('value'),
+            'cnpj' => $this->request->getVar('cnpj'),
+            'description' => $this->request->getVar('description')
+        );
+
+        $order = new OrderModel();
+
+        $order->update($id, $dataOrder);
+        return redirect()->to(base_url('/'))->with('status', 'Order editada com sucesso');
+    }
 }

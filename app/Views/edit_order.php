@@ -8,7 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="">
+    <form method="post" action=<?= base_url("order/update/".$dataOrder['id']) ?>>
+    <input type="hidden" name="_method" value="PUT">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Descrição</label>
         <input type="text" class="form-control" value="<?= $dataOrder['description'] ?>" id="exampleFormControlInput1" name="description" required>
