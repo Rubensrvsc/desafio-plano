@@ -8,6 +8,7 @@ Codeigniter 4
 SQLITE3
 HTML
 CSS
+Javascript
 Bootstrap
 ```
 
