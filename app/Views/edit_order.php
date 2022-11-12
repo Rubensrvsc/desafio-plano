@@ -28,6 +28,9 @@
     </div>
         <input type="submit" value="Editar" class="btn btn-primary">
     </form>
+    <div class="back_to_home">
+    <a href="<?php echo base_url('/') ?>" class="btn btn-primary">Voltar Para home</a>
+    </div>
     </div>
 </body>
 </html>

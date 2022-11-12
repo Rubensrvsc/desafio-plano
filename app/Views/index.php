@@ -23,8 +23,9 @@
     ?>
 
 
-    <div class="h2">
+    <div class="presentation">
     <h2>Lista de Ordens</h2>
+    <a href="<?php echo base_url('order') ?>" class="btn btn-primary">Criar nova ordem</a>
   </div>
   <div class="table_section">
     <table>
@@ -44,9 +45,6 @@
           <td><?= $order['cnpj'] ?></td>
           <td>
             <button>
-              <a href="<?php echo base_url('order') ?>" class="fa-solid fa-plus"></a>
-            </button>
-            <button>
               <a href="<?php echo base_url('order/edit/'.$order['id']) ?>" class="fa-solid fa-pen-to-square"></a>
             </button>
             <button>
@@ -63,5 +61,6 @@
       <?php endforeach; ?>
     </table>
   </div>
+
 </body>
 </html>

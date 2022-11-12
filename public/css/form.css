@@ -3,3 +3,8 @@
     width: 500px;
     top: 100px;
 }
+
+.back_to_home{
+    position: relative;
+    top: 20px;
+}

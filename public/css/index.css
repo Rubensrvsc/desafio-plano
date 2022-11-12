@@ -1,7 +1,13 @@
-.h2{
+.presentation{
     position: absolute;
     left: 40%;
     top: 90px;
+}
+
+.presentation a{
+    position: relative;
+    top: 10px;
+    float: right;
 }
 
 ::placeholder{
@@ -19,7 +25,7 @@ table{
     min-width: 1000px;
     border-collapse: collapse;
     left: 200px;
-    top: 150px;
+    top: 200px;
 }
 
 thead th{
