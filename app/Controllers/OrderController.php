@@ -41,6 +41,9 @@ class OrderController extends BaseController
 
     public function edit($id = null){
         $dataOrder = $this->orderClass->find($id);
+        if (is_null($dataOrder)){
+            return redirect()->to(base_url('/'))->with('status', 'Não foi possivel encontrar a ordem');
+        }
         return view('edit_order',[
             'dataOrder' => $dataOrder
         ]);
@@ -63,6 +66,9 @@ class OrderController extends BaseController
 
     public function details($id = null){
         $order = $this->orderClass->find($id);
+        if (is_null($order)){
+            return redirect()->to(base_url('/'))->with('status', 'Não foi possivel encontrar a ordem');
+        }
         return view('details',[
             'order' => $order
         ]);
