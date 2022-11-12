@@ -43,8 +43,8 @@ php spark serve
 |---|---|---|
 | GET | `http://localhost:8080/` | Lista as ordens de serviço com algumas opções de edição, deleção, visualização e criação de ordem |
 | GET | `http://localhost:8080/order` | Obtém o formulário de criação de ordem |
-| POST | `http://localhost:8080/order` | Cria a ordem |
-| GET | `http://localhost:8080/order/edit/(:num)` | Obtém o formulário de edição de ordem |
-| PUT | `http://localhost:8080/order/update/(:num)` | Edita a ordem |
-| GET | `http://localhost:8080/order/delete/(:num)` | Deleta a ordem |
-| GET | `http://localhost:8080/order/details/(:num)` | Obtém os detalhes da ordem |
+| POST | `http://localhost:8080/order` | Cria a ordem ao clicar no botão Salvar do formulário |
+| GET | `http://localhost:8080/order/edit/(:id)` | Obtém o formulário de edição já preenchido com a ordem |
+| PUT | `http://localhost:8080/order/update/(:id)` | Edita a ordem ao clicar no botão Editar do formulário |
+| GET | `http://localhost:8080/order/delete/(:id)` | Deleta a ordem ao clicar no ícone da lixeira da lista de ordens do endpoint '/' |
+| GET | `http://localhost:8080/order/details/(:id)` | Obtém os detalhes da ordem |
